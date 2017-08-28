@@ -12,7 +12,7 @@ version: '3'
 
 services:
     nginx:
-        build: .
+        image: mishamx/nginx
         volumes:
             - ./html:/var/www/html/
         ports:
