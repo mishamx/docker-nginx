@@ -16,6 +16,8 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN curl -sLo /usr/local/bin/ep https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux && chmod +x /usr/local/bin/ep
 RUN mv /etc/nginx /etc/nginx-source
 
+COPY ./init-env.sh /init-env.sh
+
 ONBUILD COPY . /etc/nginx-source
 
 EXPOSE 80
