@@ -8,6 +8,7 @@ RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC64107
 						nginx-full \
 						curl \
 	&& rm -rf /var/lib/apt/lists/* \
+	&& rm /etc/nginx/sites-enabled/default \
 	&& mv /etc/nginx /etc/nginx-source
 
 # forward request and error logs to docker log collector
